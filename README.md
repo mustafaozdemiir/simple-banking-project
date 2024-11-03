@@ -41,7 +41,7 @@ This project is a simple banking system API developed in Java using Spring Boot.
 ### 1. Create an Account
    **URL**: `POST /account/v1`
    **Request Body**:
-     `{ "owner": "John Doe", "accountNumber": "12345678" }`
+     `{ "owner": "John Doe", "accountNumber": "123456" }`
    **Response**: Created account object
 
 ### 2. Credit an Account
