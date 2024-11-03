@@ -27,16 +27,13 @@ public class AccountService {
         }
     }
 
-    public void debit(String accountNumber, double amount) {
+    public void debit(String accountNumber, double amount) throws InsufficientBalanceException {
         Account account = accountRepository.findById(accountNumber)
                 .orElseThrow(() -> new AccountNotFoundException("Account not found with number: " + accountNumber));
-        try {
-            account.post(new WithdrawalTransaction(amount));
-            accountRepository.save(account);
-        } catch (InsufficientBalanceException e) {
-            throw new RuntimeException("Withdrawal failed: " + e.getMessage(), e);
-        }
+        account.post(new WithdrawalTransaction(amount));
+        accountRepository.save(account);
     }
+
 
     public void billPayment(String accountNumber, String payee, double amount) {
         Account account = accountRepository.findById(accountNumber)

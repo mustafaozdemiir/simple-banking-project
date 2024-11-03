@@ -1,6 +1,7 @@
 package com.yazilimmotoru.simple_banking.controller;
 
 import com.yazilimmotoru.simple_banking.model.Account;
+import com.yazilimmotoru.simple_banking.model.exception.InsufficientBalanceException;
 import com.yazilimmotoru.simple_banking.services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,9 +18,14 @@ public class AccountController {
     private AccountService accountService;
 
     @PostMapping
-    public ResponseEntity<Account> createAccount(@RequestBody Account account) {
-        Account savedAccount = accountService.createAccount(account);
-        return ResponseEntity.ok(savedAccount);
+    public ResponseEntity<?> createAccount(@RequestBody Account account) {
+        try {
+            Account savedAccount = accountService.createAccount(account);
+            return ResponseEntity.ok(savedAccount);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(new TransactionStatus("FAILED", e.getMessage()));
+        }
     }
 
     @PostMapping("/credit/{accountNumber}")
@@ -40,11 +46,13 @@ public class AccountController {
             double amount = body.get("amount");
             accountService.debit(accountNumber, amount);
             return ResponseEntity.ok(new TransactionStatus("OK"));
-        } catch (RuntimeException e) {
+        } catch (InsufficientBalanceException | RuntimeException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body(new TransactionStatus("FAILED", e.getMessage()));
         }
     }
+
+
 
     @PostMapping("/bill-payment/{accountNumber}")
     public ResponseEntity<TransactionStatus> billPayment(@PathVariable String accountNumber, @RequestBody Map<String, Object> body) {
