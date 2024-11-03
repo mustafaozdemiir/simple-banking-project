@@ -3,22 +3,18 @@ package com.yazilimmotoru.simple_banking;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yazilimmotoru.simple_banking.controller.AccountController;
 import com.yazilimmotoru.simple_banking.model.Account;
-import com.yazilimmotoru.simple_banking.model.exception.AccountNotFoundException;
 import com.yazilimmotoru.simple_banking.model.exception.InsufficientBalanceException;
 import com.yazilimmotoru.simple_banking.services.AccountService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -94,7 +90,6 @@ public class AccountControllerTest {
         Map<String, Double> request = new HashMap<>();
         request.put("amount", amount);
 
-        // Burada `debit` metodu, checked istisna fırlatabilmesi için uygun şekilde mock'lanıyor.
         doThrow(new InsufficientBalanceException("Insufficient funds"))
                 .when(accountService).debit(anyString(), eq(amount));
 
@@ -105,7 +100,6 @@ public class AccountControllerTest {
                 .andExpect(jsonPath("$.status").value("FAILED"))
                 .andExpect(jsonPath("$.errorMessage").value("Insufficient funds"));
 
-        // Hesap servisinin doğru bir şekilde çağrıldığını doğruluyoruz.
         verify(accountService, times(1)).debit(eq("123456"), eq(amount));
     }
 
