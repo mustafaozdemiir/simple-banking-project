@@ -26,8 +26,11 @@ This project is a simple banking system API developed in Java using Spring Boot.
    `git clone https://github.com/mustafaozdemiir/simple-banking-project.git`
    `cd simple-banking-project`
 
-2. Configure Database (Optional)  
+2. Configure Database
    This project is preconfigured for PostgreSQL. To use another database, update the `application.properties` file with the appropriate configuration.
+   `spring.datasource.url=jdbc:postgresql://localhost:5433/simple_banking`
+   `spring.datasource.username=username`  
+   `spring.datasource.password=password`
 
 3. Build the Project
    `mvn clean install`
@@ -35,38 +38,39 @@ This project is a simple banking system API developed in Java using Spring Boot.
 4. Run the Application
    `mvn spring-boot:run`
    The application will start at `http://localhost:7070`.
-
+## Swagger
+`http://localhost:7070/swagger-ui/index.html`
 ## API Endpoints
 
 ### 1. Create an Account
-   **URL**: `POST /account/v1`
+   **URL**: `POST /account/v1`  
    **Request Body**:
-     `{ "owner": "John Doe", "accountNumber": "123456" }`
+     `{ "owner": "John Doe", "accountNumber": "123456" }`  
    **Response**: Created account object
 
 ### 2. Credit an Account
-   **URL**: `POST /account/v1/credit/{accountNumber}`
+   **URL**: `POST /account/v1/credit/{accountNumber}`  
    **Request Body**:
-     `{ "amount": 100.0 }`
+     `{ "amount": 100.0 }`  
    **Response**:
      `{ "status": "OK", "approvalCode": "UUID-string" }`
 
 ### 3. Debit an Account
-   **URL**: `POST /account/v1/debit/{accountNumber}`
+   **URL**: `POST /account/v1/debit/{accountNumber}`  
    **Request Body**:
-     `{ "amount": 50.0 }`
+     `{ "amount": 50.0 }`  
    **Response**:
      `{ "status": "OK", "approvalCode": "UUID-string" }`
 
 ### 4. Bill Payment
-   **URL**: `POST /account/v1/bill-payment/{accountNumber}`
+   **URL**: `POST /account/v1/bill-payment/{accountNumber}`  
    **Request Body**:
-     `{ "payee": "Electric Company", "amount": 30.0 }`
+     `{ "payee": "Electric Company", "amount": 30.0 }`  
    **Response**:
      `{ "status": "OK", "approvalCode": "UUID-string" }`
 
 ### 5. Get Account Details
-   **URL**: `GET /account/v1/{accountNumber}`
+   **URL**: `GET /account/v1/{accountNumber}`  
    **Response**: Account details, including balance and transaction history.
 
 
@@ -74,5 +78,4 @@ This project is a simple banking system API developed in Java using Spring Boot.
 Execute unit tests using Maven:
 `mvn test`
 
-## Swagger
-`http://localhost:7070/swagger-ui/index.html`
+
