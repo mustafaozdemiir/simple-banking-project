@@ -43,7 +43,7 @@ This project is a simple banking system API developed in Java using Spring Boot.
 ## API Endpoints
 
 ## Postman Collection
-[Postman Collection.json](https://github.com/mustafaozdemiir/simple-banking-project/blob/master/postman-collection.json)
+[Postman Collection.json](https://raw.githubusercontent.com/mustafaozdemiir/simple-banking-project/refs/heads/master/postman-collection.json)
 
 ### 1. Create an Account
    **URL**: `POST /account/v1`  
