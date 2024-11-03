@@ -42,6 +42,9 @@ This project is a simple banking system API developed in Java using Spring Boot.
 `http://localhost:7070/swagger-ui/index.html`
 ## API Endpoints
 
+## Postman Collection
+[Postman Collection.json](https://github.com/mustafaozdemiir/simple-banking-project/blob/master/postman-collection.json)
+
 ### 1. Create an Account
    **URL**: `POST /account/v1`  
    **Request Body**:

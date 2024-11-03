@@ -1,0 +1,520 @@
+{
+	"info": {
+		"_postman_id": "a89e814c-644e-49e4-ae50-8ca233a0e72d",
+		"name": "Simple Banking Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38671990"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "debit",
+							"item": [
+								{
+									"name": "{accountNumber}",
+									"item": [
+										{
+											"name": "debit",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"nostrud_a2c\": \"<double>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/account/v1/debit/:accountNumber",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"account",
+														"v1",
+														"debit",
+														":accountNumber"
+													],
+													"variable": [
+														{
+															"key": "accountNumber",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"nostrud_a2c\": \"<double>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/account/v1/debit/:accountNumber",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"account",
+																"v1",
+																"debit",
+																":accountNumber"
+															],
+															"variable": [
+																{
+																	"key": "accountNumber"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"status\": \"<string>\",\n  \"approvalCode\": \"<string>\",\n  \"errorMessage\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "credit",
+							"item": [
+								{
+									"name": "{accountNumber}",
+									"item": [
+										{
+											"name": "credit",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"nostrud_a2c\": \"<double>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/account/v1/credit/:accountNumber",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"account",
+														"v1",
+														"credit",
+														":accountNumber"
+													],
+													"variable": [
+														{
+															"key": "accountNumber",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"nostrud_a2c\": \"<double>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/account/v1/credit/:accountNumber",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"account",
+																"v1",
+																"credit",
+																":accountNumber"
+															],
+															"variable": [
+																{
+																	"key": "accountNumber"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"status\": \"<string>\",\n  \"approvalCode\": \"<string>\",\n  \"errorMessage\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "bill-payment",
+							"item": [
+								{
+									"name": "{accountNumber}",
+									"item": [
+										{
+											"name": "bill Payment",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"essecdd\": {}\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/account/v1/bill-payment/:accountNumber",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"account",
+														"v1",
+														"bill-payment",
+														":accountNumber"
+													],
+													"variable": [
+														{
+															"key": "accountNumber",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"essecdd\": {}\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/account/v1/bill-payment/:accountNumber",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"account",
+																"v1",
+																"bill-payment",
+																":accountNumber"
+															],
+															"variable": [
+																{
+																	"key": "accountNumber"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"status\": \"<string>\",\n  \"approvalCode\": \"<string>\",\n  \"errorMessage\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "{accountNumber}",
+							"item": [
+								{
+									"name": "get Account",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/account/v1/:accountNumber",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"account",
+												"v1",
+												":accountNumber"
+											],
+											"variable": [
+												{
+													"key": "accountNumber",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/account/v1/:accountNumber",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"account",
+														"v1",
+														":accountNumber"
+													],
+													"variable": [
+														{
+															"key": "accountNumber"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"accountNumber\": \"<string>\",\n  \"owner\": \"<string>\",\n  \"balance\": \"<double>\",\n  \"transactions\": [\n    {\n      \"amount\": \"<double>\",\n      \"date\": \"<dateTime>\",\n      \"account\": {\n        \"value\": \"<Circular reference to #/components/schemas/Account detected>\"\n      }\n    },\n    {\n      \"amount\": \"<double>\",\n      \"date\": \"<dateTime>\",\n      \"account\": {\n        \"value\": \"<Circular reference to #/components/schemas/Account detected>\"\n      }\n    }\n  ]\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "create Account",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"accountNumber\": \"<string>\",\n  \"owner\": \"<string>\",\n  \"balance\": \"<double>\",\n  \"transactions\": [\n    {\n      \"amount\": \"<double>\",\n      \"date\": \"<dateTime>\",\n      \"account\": {\n        \"value\": \"<Circular reference to #/components/schemas/Account detected>\"\n      }\n    },\n    {\n      \"amount\": \"<double>\",\n      \"date\": \"<dateTime>\",\n      \"account\": {\n        \"value\": \"<Circular reference to #/components/schemas/Account detected>\"\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/v1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"v1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"accountNumber\": \"<string>\",\n  \"owner\": \"<string>\",\n  \"balance\": \"<double>\",\n  \"transactions\": [\n    {\n      \"amount\": \"<double>\",\n      \"date\": \"<dateTime>\",\n      \"account\": {\n        \"value\": \"<Circular reference to #/components/schemas/Account detected>\"\n      }\n    },\n    {\n      \"amount\": \"<double>\",\n      \"date\": \"<dateTime>\",\n      \"account\": {\n        \"value\": \"<Circular reference to #/components/schemas/Account detected>\"\n      }\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/account/v1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"account",
+												"v1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:7070"
+		}
+	]
+}
